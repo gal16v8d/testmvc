@@ -18,7 +18,7 @@
 	<context:annotation-config />
 
 	<bean id="usuarioBO" class="co.com.gsdd.test.bo.UsuarioBO"></bean>
-	<bean id="testAOP" class="co.com.gsdd.test.principal.TestAOP"></bean>
+	<bean id="testAOP" class="co.com.gsdd.test.main.TestAOP"></bean>
 
 	<!-- Add this tag to enable annotations transactions -->
 	<tx:annotation-driven transaction-manager="transactionManager" />

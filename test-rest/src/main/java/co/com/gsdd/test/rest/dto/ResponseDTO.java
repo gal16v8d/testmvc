@@ -14,7 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "respuestaDTO", propOrder = { "statusDTO" })
+@XmlType(name = "responseDTO", propOrder = { "statusDTO" })
 @XmlSeeAlso({ ListaUsuarioOutDTO.class })
 public class ResponseDTO implements Serializable {
 

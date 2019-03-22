@@ -1,0 +1,113 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2019-03-21T04:42:10.117Z",
+	"__export_source": "insomnia.desktop.app:v6.3.2",
+	"resources": [
+		{
+			"_id": "wrk_2c729183215049dba39e81600ac0fa04",
+			"created": 1553137408793,
+			"description": "",
+			"modified": 1553137408793,
+			"name": "Test Spring 3",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_247a5639cbdd4484b3f5decb2e3c0d56",
+			"color": null,
+			"created": 1553137408992,
+			"data": {
+				"auth": "j_spring_security_check",
+				"context": "test-rest",
+				"host": "localhost",
+				"pass": "j_password",
+				"port": "8080",
+				"user": "j_username"
+			},
+			"isPrivate": false,
+			"metaSortKey": 1553137408992,
+			"modified": 1553142625451,
+			"name": "New Environment",
+			"parentId": "wrk_2c729183215049dba39e81600ac0fa04",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_d1963123d0d84a71a8c50bd97bb459f5",
+			"cookies": [
+				{
+					"creation": "2019-03-21T03:04:20.297Z",
+					"domain": "localhost",
+					"hostOnly": true,
+					"id": "6389696647950871",
+					"key": "JSESSIONID",
+					"lastAccessed": "2019-03-21T04:40:54.822Z",
+					"path": "/test-rest",
+					"value": "e17r86oWm7KqA4DORMyU8Y2s.undefined"
+				}
+			],
+			"created": 1553137409000,
+			"modified": 1553143254822,
+			"name": "Default Jar",
+			"parentId": "wrk_2c729183215049dba39e81600ac0fa04",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "req_45584ca529ec45138fa2edae9c1ac79e",
+			"authentication": {},
+			"body": {},
+			"created": 1553137429389,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d1880d14f98840209dbbb1432552482d",
+					"name": "Cookie",
+					"value": "e17r86oWm7KqA4DORMyU8Y2s.undefined"
+				},
+				{
+					"id": "pair_a20e5a6860264291bea42d4e94cbcfd7",
+					"name": "Accept",
+					"value": "application/xml"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1553137429389,
+			"method": "POST",
+			"modified": 1553143299484,
+			"name": "listarUsuarios",
+			"parameters": [],
+			"parentId": "wrk_2c729183215049dba39e81600ac0fa04",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ host  }}:{{ port  }}/{{ context  }}/api/usuario/listarUsuarios",
+			"_type": "request"
+		},
+		{
+			"_id": "req_0183b523a00f46ae9920780d4caf180b",
+			"authentication": {},
+			"body": {},
+			"created": 1553137831465,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1553137831465,
+			"method": "POST",
+			"modified": 1553142631910,
+			"name": "SecurityCheck",
+			"parameters": [],
+			"parentId": "wrk_2c729183215049dba39e81600ac0fa04",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ host  }}:{{ port  }}/{{ context  }}/{{ auth  }}?{{ user  }}=e6838d8c&{{ pass  }}=1b612ae8",
+			"_type": "request"
+		}
+	]
+}

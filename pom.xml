@@ -7,6 +7,12 @@
 	<artifactId>test</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
+	
+	<modules>
+		<module>test-persistence</module>
+		<module>test-util</module>
+		<module>test-rest</module>
+	</modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,11 +33,11 @@
 		<c3p0.version>0.9.1.2</c3p0.version>
 		<hibernate.version>4.3.0.Final</hibernate.version>
 		<postgres.version>42.1.4.jre7</postgres.version>
-		<spring.version>3.2.5.RELEASE</spring.version>
+		<spring.version>4.3.22.RELEASE</spring.version>
 		<aspectj.version>1.6.11</aspectj.version>
 		<cglib.version>2.2.2</cglib.version>
 
-		<spring.security.version>3.2.5.RELEASE</spring.security.version>
+		<spring.security.version>4.2.11.RELEASE</spring.security.version>
 		<jackson-databind.version>[2.9.8,)</jackson-databind.version>
 
 		<!-- mvn -->
@@ -41,12 +47,25 @@
 		<mvn.resources.plugin.version>2.6</mvn.resources.plugin.version>
 		<mvn.war.plugin.version>2.4</mvn.war.plugin.version>
 	</properties>
-
-	<modules>
-		<module>test-persistence</module>
-		<module>test-util</module>
-		<module>test-rest</module>
-	</modules>
+	
+	<repositories>
+		<repository>
+			<id>central</id>
+			<url>https://repo.maven.apache.org/maven2</url>
+		</repository>
+		<repository>
+			<id>jcenter</id>
+			<url>https://bintray.com/bintray/jcenter</url>
+		</repository>
+		<repository>
+			<id>spring.repo</id>
+			<url>http://repo.spring.io/plugins-release/</url>
+		</repository>
+		<repository>
+			<id>GSDD.disk.repo</id>
+			<url>file://C:/Users/${user.name}/.m2/repository</url>
+		</repository>
+	</repositories>
 
 	<dependencyManagement>
 		<dependencies>
@@ -87,11 +106,13 @@
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-entitymanager</artifactId>
 				<version>${hibernate.version}</version>
+				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-validator</artifactId>
 				<version>${hibernate.version}</version>
+				<scope>provided</scope>
 			</dependency>
 			<!-- Spring Security -->
 			<dependency>

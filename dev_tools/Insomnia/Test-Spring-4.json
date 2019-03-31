@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2019-03-21T04:42:10.117Z",
+	"__export_date": "2019-03-31T16:51:38.569Z",
 	"__export_source": "insomnia.desktop.app:v6.3.2",
 	"resources": [
 		{
@@ -9,7 +9,7 @@
 			"created": 1553137408793,
 			"description": "",
 			"modified": 1553137408793,
-			"name": "Test Spring 3",
+			"name": "Test Spring 4",
 			"parentId": null,
 			"_type": "workspace"
 		},
@@ -18,16 +18,16 @@
 			"color": null,
 			"created": 1553137408992,
 			"data": {
-				"auth": "j_spring_security_check",
+				"auth": "login",
 				"context": "test-rest",
 				"host": "localhost",
-				"pass": "j_password",
+				"pass": "password",
 				"port": "8080",
-				"user": "j_username"
+				"user": "username"
 			},
 			"isPrivate": false,
 			"metaSortKey": 1553137408992,
-			"modified": 1553142625451,
+			"modified": 1554051057410,
 			"name": "New Environment",
 			"parentId": "wrk_2c729183215049dba39e81600ac0fa04",
 			"_type": "environment"
@@ -39,15 +39,15 @@
 					"creation": "2019-03-21T03:04:20.297Z",
 					"domain": "localhost",
 					"hostOnly": true,
-					"id": "6389696647950871",
+					"id": "35817944815179836",
 					"key": "JSESSIONID",
-					"lastAccessed": "2019-03-21T04:40:54.822Z",
+					"lastAccessed": "2019-03-31T16:51:08.299Z",
 					"path": "/test-rest",
-					"value": "e17r86oWm7KqA4DORMyU8Y2s.undefined"
+					"value": "9AF8lVvRCj6E6s5cYiv0WwXK.undefined"
 				}
 			],
 			"created": 1553137409000,
-			"modified": 1553143254822,
+			"modified": 1554051068300,
 			"name": "Default Jar",
 			"parentId": "wrk_2c729183215049dba39e81600ac0fa04",
 			"_type": "cookie_jar"
@@ -62,18 +62,18 @@
 				{
 					"id": "pair_d1880d14f98840209dbbb1432552482d",
 					"name": "Cookie",
-					"value": "e17r86oWm7KqA4DORMyU8Y2s.undefined"
+					"value": "+x9fCK4Yb6Rtc6y7SX1l8ywC.undefined"
 				},
 				{
 					"id": "pair_a20e5a6860264291bea42d4e94cbcfd7",
 					"name": "Accept",
-					"value": "application/xml"
+					"value": "application/json"
 				}
 			],
 			"isPrivate": false,
 			"metaSortKey": -1553137429389,
 			"method": "POST",
-			"modified": 1553143299484,
+			"modified": 1554051030633,
 			"name": "listarUsuarios",
 			"parameters": [],
 			"parentId": "wrk_2c729183215049dba39e81600ac0fa04",
@@ -96,7 +96,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1553137831465,
 			"method": "POST",
-			"modified": 1553142631910,
+			"modified": 1554051066964,
 			"name": "SecurityCheck",
 			"parameters": [],
 			"parentId": "wrk_2c729183215049dba39e81600ac0fa04",

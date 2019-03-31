@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans:beans xmlns="http://www.springframework.org/schema/security"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+<beans:beans
+	xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:sec="http://www.springframework.org/schema/security"
 	xsi:schemaLocation="
       http://www.springframework.org/schema/security
-      http://www.springframework.org/schema/security/spring-security-3.2.xsd
+      http://www.springframework.org/schema/security/spring-security-4.2.xsd
       http://www.springframework.org/schema/beans
       http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
 
 	<!-- Rest authentication entry point configuration -->
-	<http use-expressions="true" entry-point-ref="restAuthenticationEntryPoint">
+	<http use-expressions="true"
+		entry-point-ref="restAuthenticationEntryPoint">
+		<intercept-url pattern="/login*" access="isAnonymous()" />
 		<intercept-url pattern="/api/**" />
-		<sec:form-login authentication-success-handler-ref="mySuccessHandler"
+		<sec:form-login
+			authentication-success-handler-ref="mySuccessHandler"
 			authentication-failure-handler-ref="myFailureHandler" />
 		<logout />
+		<sec:csrf disabled="true" />
 	</http>
 
 	<!-- Connect the custom authentication success handler -->
@@ -24,12 +30,15 @@
 		class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler" />
 
 	<!-- Authentication manager -->
-	<authentication-manager alias="authenticationManager">
-	<authentication-provider ref="customAuthenticationProvider"/>
+	<authentication-manager
+		alias="authenticationManager">
+		<authentication-provider
+			ref="customAuthenticationProvider" />
 
 	</authentication-manager>
 
 	<!-- Enable the annotations for defining the secure role -->
-	<global-method-security secured-annotations="enabled" />
+	<global-method-security
+		secured-annotations="enabled" />
 
 </beans:beans>

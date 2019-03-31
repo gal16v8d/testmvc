@@ -12,7 +12,7 @@ This project pretend to ilustrate how to work with some technologies and expose 
 
 ### Installing
 
-Using this project on **SpringXML tag**
+Using this project on **Spring3XML or Spring4XML tag**
 Works using PostgreSQL 10 + Jboss + Spring + JavaEE api + Java 7, when you start it
 it will use C3P0 to connect and create/update DB schema. Also it will expose two services
 You can check it using [Insomnia](https://insomnia.rest/),  you can import the calls using

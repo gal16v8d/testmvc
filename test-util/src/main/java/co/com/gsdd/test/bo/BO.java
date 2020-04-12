@@ -5,25 +5,19 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import co.com.gsdd.test.utils.GenericDAO;
+import lombok.Getter;
 
+@Getter
 public class BO {
 
-	protected GenericDAO dao;
+	private GenericDAO dao;
 
 	@PersistenceContext
-	protected EntityManager em;
+	private EntityManager em;
 
 	@PostConstruct
 	public void inicializar() {
 		dao = new GenericDAO(em);
-	}
-
-	public GenericDAO getDao() {
-		return dao;
-	}
-
-	public EntityManager getEm() {
-		return em;
 	}
 
 }

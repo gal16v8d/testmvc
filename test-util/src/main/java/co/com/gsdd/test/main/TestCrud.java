@@ -4,14 +4,11 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import co.com.gsdd.test.bo.FactoryBO;
 import co.com.gsdd.test.bo.UsuarioBO;
-import co.com.gsdd.test.constants.GeneralConstants;
 import co.com.gsdd.test.constants.NumericConstants;
 import co.com.gsdd.test.entities.Usuario;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Check the basic functions.
@@ -21,11 +18,10 @@ import co.com.gsdd.test.entities.Usuario;
  *         alex.galvis.sistemas@gmail.com <br>
  *
  */
+@Slf4j
 public class TestCrud {
 
     public static final String LOG_EMPTY_LIST = "Empty list";
-    private static final Logger LOGGER =
-            LoggerFactory.getLogger(TestCrud.class);
 
     public void validateCrud() {
         final int eight = NumericConstants.EIGHT;
@@ -62,12 +58,10 @@ public class TestCrud {
         List<Usuario> lu = bo.getUsuarioList();
         if (lu != null && !lu.isEmpty()) {
             for (Usuario r : lu) {
-                LOGGER.info(new StringBuilder(GeneralConstants.OPEN_BRACKET)
-                        .append(r.toString())
-                        .append(GeneralConstants.CLOSE_BRACKET).toString());
+                log.info("[{}]", r);
             }
         } else {
-            LOGGER.info(LOG_EMPTY_LIST);
+            log.info("{}", LOG_EMPTY_LIST);
         }
     }
 

@@ -7,7 +7,7 @@
 	<artifactId>test</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
-	
+
 	<modules>
 		<module>test-persistence</module>
 		<module>test-util</module>
@@ -15,26 +15,29 @@
 	</modules>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.encoding>UTF-8</project.encoding>
+		<project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
+		<project.build.targetEncoding>${project.encoding}</project.build.targetEncoding>
+		<project.reporting.outputEncoding>${project.encoding}</project.reporting.outputEncoding>
 		<java.version>1.7</java.version>
 		<!-- test dependencies -->
 		<junit.version>4.12</junit.version>
 		<mockito.version>1.10.19</mockito.version>
 
 		<javaee.api.version>7.0</javaee.api.version>
-		<lombok.version>1.18.6</lombok.version>
+		<lombok.version>1.18.12</lombok.version>
 
 		<!-- Logger api -->
-		<slf4j.version>1.6.1</slf4j.version>
+		<slf4j.version>1.7.5</slf4j.version>
 		<!-- Logger test -->
-		<log4j.version>1.2.16</log4j.version>
+		<log4j.bridge.version>2.9.0</log4j.bridge.version>
+		<log4j.version>2.11.1</log4j.version>
 
 		<c3p0.version>0.9.1.2</c3p0.version>
 		<hibernate.version>4.3.0.Final</hibernate.version>
-		<postgres.version>42.1.4.jre7</postgres.version>
+		<postgres.version>42.2.12.jre7</postgres.version>
 		<spring.version>4.3.22.RELEASE</spring.version>
-		<aspectj.version>1.6.11</aspectj.version>
+		<aspectj.version>1.8.9</aspectj.version>
 		<cglib.version>2.2.2</cglib.version>
 
 		<spring.security.version>4.2.11.RELEASE</spring.security.version>
@@ -43,11 +46,11 @@
 		<!-- mvn -->
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<mvn.compiler.plugin.version>3.8.0</mvn.compiler.plugin.version>
+		<mvn.compiler.plugin.version>3.8.1</mvn.compiler.plugin.version>
 		<mvn.resources.plugin.version>2.6</mvn.resources.plugin.version>
 		<mvn.war.plugin.version>2.4</mvn.war.plugin.version>
 	</properties>
-	
+
 	<repositories>
 		<repository>
 			<id>central</id>
@@ -172,15 +175,19 @@
 			</dependency>
 			<!-- Log4j -->
 			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j12</artifactId>
-				<version>${slf4j.version}</version>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-slf4j-impl</artifactId>
+				<version>${log4j.bridge.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>log4j</groupId>
-				<artifactId>log4j</artifactId>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
 				<version>${log4j.version}</version>
-				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>${log4j.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

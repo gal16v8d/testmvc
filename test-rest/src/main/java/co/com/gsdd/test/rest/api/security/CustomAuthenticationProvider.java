@@ -3,8 +3,6 @@ package co.com.gsdd.test.rest.api.security;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
@@ -21,6 +19,7 @@ import co.com.gsdd.test.constants.GeneralConstants;
 import co.com.gsdd.test.entities.Usuario;
 import co.com.gsdd.test.enums.EntityState;
 import co.com.gsdd.test.rest.constants.MessageConstants;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Entrypoint for access web services.
@@ -30,11 +29,9 @@ import co.com.gsdd.test.rest.constants.MessageConstants;
  *         alex.galvis.sistemas@gmail.com <br>
  *
  */
+@Slf4j
 @Component
 public class CustomAuthenticationProvider implements AuthenticationProvider {
-
-	private static final Logger LOGGER = LoggerFactory.getLogger(CustomAuthenticationProvider.class);
-
 	/**
 	 * Auth for access secured web services.
 	 * 
@@ -47,22 +44,24 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
 		String login = authentication.getName();
 		String contrasena = authentication.getCredentials().toString();
-		LOGGER.info(new StringBuilder()
+		log.info(new StringBuilder()
 				.append(MessageConstants.SERVICE_CALL)
 				.append("autenticacion")
 				.append(MessageConstants.SERVICE_PARAM)
 				.append(GeneralConstants.OPEN_BRACKET)
 				.append("login")
-				.append(GeneralConstants.EQUAL).append(login)
+				.append(GeneralConstants.EQUAL)
+				.append(MessageConstants.PARAM)
 				.append(GeneralConstants.COMMA)
 				.append("pass")
-				.append(GeneralConstants.EQUAL).append(contrasena)
-				.append(GeneralConstants.CLOSE_BRACKET).toString());
+				.append(GeneralConstants.EQUAL)
+				.append(MessageConstants.PARAM)
+				.append(GeneralConstants.CLOSE_BRACKET).toString(), login, contrasena);
 
 		UsuarioBO uBO = FactoryBO.getBean(UsuarioBO.class, UsuarioBO.NOMBRE_BO);
 		Usuario usuario = uBO.findByLoginAndPass(login, contrasena);
 		
-		LOGGER.info("Usuario: " + usuario);
+		log.info("Usuario: {}", usuario);
 		if (usuario != null) {
 			if (EntityState.ACTIVE.equals(usuario.getStatus())) {
 				String role = "ROLE_ADMIN";

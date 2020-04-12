@@ -9,22 +9,17 @@ import javax.persistence.Query;
 import co.com.gsdd.test.constants.NumericConstants;
 import co.com.gsdd.test.entities.AbstractCommonEntity;
 import co.com.gsdd.test.enums.EntityState;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @SuppressWarnings({ "unchecked" })
 public class GenericDAO implements Serializable {
 
     private static final long serialVersionUID = 3007335287625452029L;
 	private EntityManager entityManager;
-
-	public GenericDAO() {
-
-	}
-
-	public GenericDAO(EntityManager entityManager) {
-		super();
-		this.entityManager = entityManager;
-	}
-
+	
 	public void persist(AbstractCommonEntity instancia) {
 		entityManager.persist(instancia);
 		entityManager.flush();

@@ -1,8 +1,7 @@
 package co.com.gsdd.test.main;
 
-import org.slf4j.LoggerFactory;
-
 import co.com.gsdd.test.bo.FactoryBO;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Desktop execution of the program.
@@ -12,23 +11,23 @@ import co.com.gsdd.test.bo.FactoryBO;
  *         alex.galvis.sistemas@gmail.com <br>
  *
  */
+@Slf4j
 public class TestMain {
 
 	private static final String INIT_LOG = "Init...";
 
 	public static void main(String[] args) {
 		try {
-			LoggerFactory.getLogger(TestMain.class).info(INIT_LOG);
+			log.info("{}", INIT_LOG);
 			new TestMain().init();
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error("Error", e);
 			System.exit(1);
 		}
 	}
 
 	public void init() throws Exception {
 		FactoryBO.initContext();
-		// Para testear funcionalidades con BD
 		TestCrud tc = new TestCrud();
 		tc.validateCrud();
 	}

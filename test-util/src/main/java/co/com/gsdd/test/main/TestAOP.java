@@ -5,8 +5,8 @@ import java.util.Arrays;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Test class only for practice AOP.
@@ -16,10 +16,10 @@ import org.slf4j.LoggerFactory;
  *         alex.galvis.sistemas@gmail.com <br>
  *
  */
+@Slf4j
 @Aspect
 public class TestAOP {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(TestAOP.class);
 	public static final String METHOD = "execution(* co.com.gsdd.test.bo..*(..))";
 
 	/**
@@ -28,7 +28,7 @@ public class TestAOP {
 	@Around(METHOD)
 	public Object invoke(ProceedingJoinPoint jp) throws Throwable {
 		// Original method args
-		LOGGER.info(Arrays.toString(jp.getArgs()));
+		log.info("{}", Arrays.toString(jp.getArgs()));
 		// use MethodBeforeAdvice
 		try {
 			// Proceed to call original method

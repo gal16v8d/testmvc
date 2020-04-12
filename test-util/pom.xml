@@ -84,7 +84,7 @@
 		</dependency>
 		<!-- Internal dependency -->
 		<dependency>
-			<groupId>${groupId}</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>test-persistence</artifactId>
 		</dependency>
 	</dependencies>

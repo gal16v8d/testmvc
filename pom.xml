@@ -85,14 +85,14 @@
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
-				<groupId>${groupId}</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>test-persistence</artifactId>
-				<version>${version}</version>
+				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>${groupId}</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>test-util</artifactId>
-				<version>${version}</version>
+				<version>${project.version}</version>
 			</dependency>
 			<!-- DB -->
 			<dependency>

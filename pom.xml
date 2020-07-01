@@ -31,7 +31,7 @@
 		<slf4j.version>1.7.5</slf4j.version>
 		<!-- Logger test -->
 		<log4j.bridge.version>2.9.0</log4j.bridge.version>
-		<log4j.version>2.11.1</log4j.version>
+		<log4j.version>2.13.3</log4j.version>
 
 		<c3p0.version>0.9.1.2</c3p0.version>
 		<hibernate.version>4.3.0.Final</hibernate.version>

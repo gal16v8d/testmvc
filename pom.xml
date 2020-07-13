@@ -28,7 +28,7 @@
 		<lombok.version>1.18.12</lombok.version>
 
 		<!-- Logger api -->
-		<slf4j.version>1.7.5</slf4j.version>
+		<slf4j.version>1.7.25</slf4j.version>
 		<!-- Logger test -->
 		<log4j.bridge.version>2.9.0</log4j.bridge.version>
 		<log4j.version>2.13.3</log4j.version>
@@ -57,16 +57,8 @@
 			<url>https://repo.maven.apache.org/maven2</url>
 		</repository>
 		<repository>
-			<id>jcenter</id>
-			<url>https://bintray.com/bintray/jcenter</url>
-		</repository>
-		<repository>
 			<id>spring.repo</id>
 			<url>http://repo.spring.io/plugins-release/</url>
-		</repository>
-		<repository>
-			<id>GSDD.disk.repo</id>
-			<url>file://C:/Users/${user.name}/.m2/repository</url>
 		</repository>
 	</repositories>
 

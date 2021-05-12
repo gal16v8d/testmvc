@@ -40,7 +40,7 @@
 		<aspectj.version>1.8.9</aspectj.version>
 		<cglib.version>2.2.2</cglib.version>
 
-		<spring.security.version>4.2.11.RELEASE</spring.security.version>
+		<spring.security.version>5.2.10.RELEASE</spring.security.version>
 		<jackson-databind.version>[2.9.8,)</jackson-databind.version>
 
 		<!-- mvn -->

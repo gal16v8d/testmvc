@@ -25,7 +25,7 @@
 		<mockito.version>1.10.19</mockito.version>
 
 		<javaee.api.version>7.0</javaee.api.version>
-		<lombok.version>1.18.12</lombok.version>
+		<lombok.version>1.18.20</lombok.version>
 
 		<!-- Logger api -->
 		<slf4j.version>1.7.25</slf4j.version>

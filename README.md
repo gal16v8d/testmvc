@@ -4,6 +4,12 @@ This project pretend to ilustrate how to work with some technologies and expose 
 
 ## Getting Started
 
+### Deprecation Note
+
+This stack of tech is old at the moment, and several vulnerabilities has been found,
+so just keeping this as a demo project, now there are a lot of better ways to perform
+what is here.
+
 ### Prerequisites
 
 * Git

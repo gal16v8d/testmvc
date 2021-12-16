@@ -16,8 +16,8 @@ public class DBConnection {
 
 	public static final String DRIVER_CLASS = "org.postgresql.Driver";
 	public static final String JDBC_URL = "jdbc:postgresql://localhost:5432/test";
-	public static final String USER = "postgres";
-	public static final String PASS = "postgres";
+	public static final String USER = "testmvc";
+	public static final String PASS = "testmvc$1";
 
 	private String driverClass;
 	private String jdbcUrl;
